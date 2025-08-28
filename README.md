@@ -165,7 +165,7 @@ zoom_advanced_integration/
 ### Meeting Management (Auth0/OKTA JWT required)
 
 - `GET /api/meetings` - List meetings (filtered by organization)
-- `POST /api/meetings` - Create a meeting (enforces OKTA group permissions)
+- `POST /api/meetings` - Create a meeting
 - `PUT /api/meetings/:meetingId` - Update a meeting (requires ownership/admin)
 - `DELETE /api/meetings/:meetingId` - Delete a meeting (requires ownership/admin)
 
@@ -264,16 +264,6 @@ npm run preview # Preview production build
 - **Organization Isolation**: Users can only access meetings within their organization
 - **Audit Logging**: All actions logged with OKTA user context
 - **CORS**: Restricted to specific origins in production
-
-## OKTA Group Permissions Matrix
-
-| OKTA Group  | Can Host | Can Record | Max Duration | Can Schedule |
-| ----------- | -------- | ---------- | ------------ | ------------ |
-| zoom-admins | Yes      | Yes        | Unlimited    | Yes          |
-| zoom-hosts  | Yes      | Yes        | 4 hours      | Yes          |
-| employees   | No       | No         | 1 hour       | Yes          |
-| contractors | No       | No         | 30 minutes   | No           |
-| external    | No       | No         | 15 minutes   | No           |
 
 ## Troubleshooting
 
